@@ -1,47 +1,116 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Header from '../Shared/Header/Header';
 import Footer from '../Shared/Footer/Footer';
+import { AuthContext } from '../providers/Authproviders';
+import Swal from 'sweetalert2'
 
 const AddToy = () => {
+    const {user} = useContext(AuthContext);
+    const handleAddToy = event =>{
+        event.preventDefault();
+        const form = event.target;
+        const photo = form.photo.value;
+        const toyname = form.toyname.value;
+        const sellername = form.sellername.value;
+        const email = form.email.value;
+        const category = form.category.value;
+        const price = form.price.value;
+        const rating = form.rating.value;
+        const quantity = form.quantity.value;
+        const details = form.details.value;
+        const toy = {photo,toyname,sellername,email,category,price,rating,quantity,details};
+        console.log(toy);
+
+        fetch('http://localhost:2000/toy',{
+            method: 'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body: JSON.stringify(toy)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if(data.insertedId){
+                Swal.fire({
+                    title: 'success',
+                    text: 'Toy added successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+            }
+        })
+    }
     return (
         <div>
             <Header></Header>
-            <h1>Add A Toy</h1>
-            <form id="addToyForm">
-                <label for="pictureUrl">Picture URL:</label>
-                <input type="text" id="pictureUrl" name="pictureUrl" required/><br></br>
-
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required/><br></br>
-
-                <label for="sellerName">Seller Name:</label>
-                <input type="text" id="sellerName" name="sellerName" readonly/><br></br>
-
-                <label for="sellerEmail">Seller Email:</label>
-                <input type="email" id="sellerEmail" name="sellerEmail" readonly/><br></br>
-
-                <label for="subCategory">Sub-category:</label>
-                <select id="subCategory" name="subCategory" required>
-                <option value="">Select Sub-category</option>
-                <option value="Math Toys">Math Toys</option>
-                <option value="Language Toys">Language Toys</option>
-                <option value="Science Toys">Science Toys</option>
-                </select><br></br>
-
-                <label for="price">Price:</label>
-                <input type="number" id="price" name="price" required/><br></br>
-
-                <label for="rating">Rating:</label>
-                <input type="number" id="rating" name="rating" required/><br></br>
-
-                <label for="quantity">Available Quantity:</label>
-                <input type="number" id="quantity" name="quantity" required/><br></br>
-
-                <label for="description">Description:</label><br></br>
-                <textarea id="description" name="description" rows="4" cols="50"></textarea><br></br>
-
-                <input type="submit" value="Submit"/>
-            </form>
+            <h1 className='text-center text-7xl'>Add A Toy</h1>
+            <div className='ms-96'>
+                <form onSubmit={handleAddToy}>
+                    <div className='flex'>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Picture URL</span>
+                            </label>
+                            <input type="text" name="photo"  placeholder="Picture URL" className="input input-bordered w-full max-w-xs" />
+                        </div>
+                        <div className="form-control w-full max-w-xs ms-12">
+                            <label className="label">
+                                <span className="label-text">Toy name</span>
+                            </label>
+                            <input type="text" name="toyname"  placeholder="Toy name" className="input input-bordered w-full max-w-xs" />
+                        </div>
+                    </div>
+                    <div className='flex mt-6'>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Seller name</span>
+                            </label>
+                            <input type="text" name="sellername" defaultValue={user.displayName && user.displayName}  placeholder="Seller name" className="input input-bordered w-full max-w-xs" />
+                        </div>
+                        <div className="form-control w-full max-w-xs ms-12">
+                            <label className="label">
+                                <span className="label-text">Seller email</span>
+                            </label>
+                            <input type="email" name="email" defaultValue={user.email}  placeholder="Seller email" className="input input-bordered w-full max-w-xs" />
+                        </div>
+                    </div>
+                    {/* category and price field */}
+                    <div className='flex'>
+                        <select className="select select-bordered w-full max-w-xs mt-12" name="category">
+                        <option disabled selected>Sub Category</option>
+                        <option>Math Toys</option>
+                        <option>Language Toys</option>
+                        <option>Engineering Toys</option>
+                        </select>
+                        <div className="form-control w-full max-w-xs ms-12 mt-3">
+                            <label className="label">
+                                <span className="label-text">Price</span>
+                            </label>
+                            <input type="text" name="price"  placeholder="Price" className="input input-bordered w-full max-w-xs" />
+                        </div>
+                    </div>
+                    {/* price and Rating */}
+                    <div className='flex mt-6'>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Rating</span>
+                            </label>
+                            <input type="text" name="rating"  placeholder="Rating" className="input input-bordered w-full max-w-xs" />
+                        </div>
+                        <div className="form-control w-full max-w-xs ms-12">
+                            <label className="label">
+                                <span className="label-text">Quantity</span>
+                            </label>
+                            <input type="text" name="quantity"  placeholder="quantity" className="input input-bordered w-full max-w-xs" />
+                        </div>
+                    </div>
+                    <div>
+                    <textarea className="textarea textarea-bordered mt-6 mb-6" name="details" placeholder="Detail description"></textarea>
+                    </div>
+                    <input type="submit" value="Add Coffee" className="btn ms-80 mb-12"/>
+                </form>
+            </div>
              <Footer></Footer>
         </div>
     );
