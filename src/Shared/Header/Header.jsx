@@ -31,7 +31,9 @@ const Header = () => {
                     <Link to="/alltoy">All toy</Link>
                     </li>
                     <li>
-                    <Link to="/mytoy">My toy</Link>
+                        {
+                            user && <Link to="/mytoy">My toy</Link>
+                        }
                     </li>
                     <li>
                             {
@@ -65,7 +67,9 @@ const Header = () => {
                     <Link to="/alltoy">All toy</Link>
                     </li>
                     <li>
-                    <Link to="/mytoy">My toy</Link>
+                        {
+                            user && <Link to="/mytoy">My toy</Link>
+                        }
                     </li>
                     <li>
                     <li>
