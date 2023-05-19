@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../providers/Authproviders';
 
 const Header = () => {
+    const {user, logout} = useContext(AuthContext);
+    console.log(user);
+    const handlelogout = () =>{
+        logout()
+        .then(() =>{})
+        .catch(error => console.error(error))
+    }
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -16,6 +24,28 @@ const Header = () => {
                     <li>
                         <Link to="/blog">Blog</Link>
                     </li>
+                    <li>
+                    <Link to="/addtoy">Add a toy</Link>
+                    </li>
+                    <li>
+                    <Link to="/alltoy">All toy</Link>
+                    </li>
+                    <li>
+                    <Link to="/mytoy">My toy</Link>
+                    </li>
+                    <li>
+                            {
+                            user ? 
+                            <>
+                            <span>{user.email}</span>
+                            <button onClick = {handlelogout} className="btn btn-xs">Sign out</button>
+                            </>
+                            : <Link to="/login">Login</Link>
+                            }
+                    </li>
+                    <li>
+                    <Link to="/registration">Registration</Link>
+                    </li>
                 </ul>
                 </div>
                 <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
@@ -28,6 +58,30 @@ const Header = () => {
                 <li>
                     <Link to="/blog">Blog</Link>
                 </li>
+                <li>
+                    <Link to="/addtoy">Add a toy</Link>
+                </li>
+                <li>
+                    <Link to="/alltoy">All toy</Link>
+                    </li>
+                    <li>
+                    <Link to="/mytoy">My toy</Link>
+                    </li>
+                    <li>
+                    <li>
+                            {
+                            user ? 
+                            <>
+                            <span>{user.email}</span>
+                            <button onClick = {handlelogout} className="btn btn-xs">Sign out</button>
+                            </>
+                            : <Link to="/login">Login</Link>
+                            }
+                    </li>
+                    </li>
+                    <li>
+                    <Link to="/registration">Registration</Link>
+                    </li>
                 </ul>
             </div>
             <div className="navbar-end">
