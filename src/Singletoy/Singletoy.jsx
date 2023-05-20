@@ -1,6 +1,12 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Singletoy = ({toy}) => {
+  const navigate = useNavigate();
+  const handleViewDetails = (toy) => {
+    const data = { toy };
+    navigate("/detailspage", { state: { data } });
+  };
     return (
         <tr>
         <td>
@@ -17,7 +23,7 @@ const Singletoy = ({toy}) => {
         <td>{toy.price}</td>
         <td>{toy.quantity}</td>
         <th>
-          <button className="btn btn-ghost btn-xs">details</button>
+          <button onClick={() => handleViewDetails(toy)} className="btn btn-ghost btn-xs">details</button>
         </th>
       </tr>
     );
