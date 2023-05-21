@@ -18,6 +18,9 @@ const Blog = () => {
             <p>We can store the access token and refresh token in the server-side session.</p>
             <h2  className='text-2xl'>Compare SQL and NoSQL databases?</h2>
             <p>SQL databases are vertically scalable, while NoSQL databases are horizontally scalable. SQL databases are table-based, while NoSQL databases are document, key-value, graph, or wide-column stores. SQL databases are better for multi-row transactions, while NoSQL is better for unstructured data like documents or JSON.</p>
+            <h2 className='text-2xl'>What is express js? What is Nest JS?</h2>
+            <p>Express js:</p>
+            <p>Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.</p>
             <Footer></Footer>
         </div>
     );
