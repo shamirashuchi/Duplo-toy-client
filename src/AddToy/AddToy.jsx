@@ -108,7 +108,7 @@ const AddToy = () => {
                     <div>
                     <textarea className="textarea textarea-bordered mt-6 mb-6" name="details" placeholder="Detail description"></textarea>
                     </div>
-                    <input type="submit" value="Add Coffee" className="btn ms-80 mb-12"/>
+                    <input type="submit" value="Add Toy" className="btn ms-80 mb-12"/>
                 </form>
             </div>
              <Footer></Footer>

@@ -53,7 +53,7 @@ const Home = () => {
 
         <div className="flex">
           {Data.map((subCategory) => (
-            <TabPanel key={subCategory.name}>
+            <TabPanel key={subCategory.name} data-aos="fade-up">
               <h2>{subCategory.name}</h2>
               <div className="toy-list">
                 {subCategory.toys.map((toy) => (

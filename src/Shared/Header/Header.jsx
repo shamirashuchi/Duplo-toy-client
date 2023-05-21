@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/Authproviders';
-
+import logo  from '../../../public/duplo-lego.svg'
 const Header = () => {
     const {user, logout} = useContext(AuthContext);
     console.log(user);
@@ -50,7 +50,9 @@ const Header = () => {
                     </li>
                 </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                <a className="w-12">
+          <img src={logo} alt="Logo" /></a>
+          <a className='text-xl'>Duplo toy</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -87,9 +89,6 @@ const Header = () => {
                     <Link to="/registration">Registration</Link>
                     </li>
                 </ul>
-            </div>
-            <div className="navbar-end">
-                <a className="btn">Get started</a>
             </div>
         </div>
     );
