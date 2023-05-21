@@ -79,7 +79,7 @@ const Header = () => {
                             user ? 
                             <>
                             <span>{user.email}</span>
-                            <button onClick = {handlelogout} className="btn btn-xs">Sign out</button>
+                            <button onClick = {handlelogout} className="btn btn-secondary">Sign out</button>
                             </>
                             : <Link to="/login">Login</Link>
                             }
