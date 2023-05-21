@@ -6,7 +6,13 @@ const Blog = () => {
     return (
         <div>
             <Header></Header>
-            <h2>This is blog page</h2>
+            <h2>What is an access token and refresh token? How do they work and where should we store them on the client-side?</h2>
+            <p>access token:</p>
+            <p>An access token is a tiny piece of code that contains a large amount of data. Information about the user, permissions, groups, and timeframes is embedded within one token that passes from a server to a user's device.</p>
+            <p>refresh token:</p>
+            <p>A refresh token is a special token that is used to obtain additional access tokens. This allows you to have short-lived access tokens without having to collect credentials every time one expires.</p>
+            <p>How do access token work?</p>
+            <p>The application receives an access token after a user successfully authenticates and authorizes access, then passes the access token as a credential when it calls the target API.</p>
             <Footer></Footer>
         </div>
     );
