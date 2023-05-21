@@ -1,5 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import Header from '../Shared/Header/Header';
+import Footer from '../Shared/Footer/Footer';
 
 const Detailspage = () => {
     const location = useLocation();
@@ -7,6 +9,7 @@ const Detailspage = () => {
   const {_id,photo,toyname,sellername,email,category,price,rating,quantity,details} = toy;
     return (
         <div>
+            <Header></Header>
             <div className="card w-full bg-base-100 shadow-xl">
                 <figure><img src={photo} alt="Shoes" /></figure>
                 <div className="card-body">
@@ -20,6 +23,7 @@ const Detailspage = () => {
                     <p>{details}</p>
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };
