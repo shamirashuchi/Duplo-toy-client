@@ -11,11 +11,14 @@ import Registration from "../Registration/Registration";
 import Privateroute from "./Privateroute";
 import UpdateToy from "../UpdateToy/UpdateToy";
 import Detailspage from "../Alltoy/Detailspage";
+import ErrorPage from "../ErrorPage/ErrorPage";
+
 
 const router = createBrowserRouter([
     {
       path: "/",
       element:<Main></Main>,
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
           path: "/",
