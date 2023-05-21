@@ -23,6 +23,9 @@ const Blog = () => {
             <p>Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.</p>
             <p>Nest JS:</p>
             <p>Nest. js is one of the fastest-growing Node. js frameworks for building efficient, scalable, and enterprise-grade backend applications using Node. js.</p>
+            <h2  className='text-2xl'>What is MongoDB aggregate and how does it work?</h2>
+            <p>Aggregation is a way of processing a large number of documents in a collection by means of passing them through different stages.</p>
+            
             <Footer></Footer>
         </div>
     );
