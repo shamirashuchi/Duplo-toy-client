@@ -25,7 +25,7 @@ const Blog = () => {
             <p>Nest. js is one of the fastest-growing Node. js frameworks for building efficient, scalable, and enterprise-grade backend applications using Node. js.</p>
             <h2  className='text-2xl'>What is MongoDB aggregate and how does it work?</h2>
             <p>Aggregation is a way of processing a large number of documents in a collection by means of passing them through different stages.</p>
-            
+            <p>The stages make up what is known as a pipeline. The stages in a pipeline can filter, sort, group, reshape and modify documents that pass through the pipeline.</p>
             <Footer></Footer>
         </div>
     );
