@@ -21,6 +21,8 @@ const Blog = () => {
             <h2 className='text-2xl'>What is express js? What is Nest JS?</h2>
             <p>Express js:</p>
             <p>Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.</p>
+            <p>Nest JS:</p>
+            <p>Nest. js is one of the fastest-growing Node. js frameworks for building efficient, scalable, and enterprise-grade backend applications using Node. js.</p>
             <Footer></Footer>
         </div>
     );
