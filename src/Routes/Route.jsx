@@ -32,11 +32,11 @@ const router = createBrowserRouter([
     }, 
     {
       path:"/toydetails",
-      element:<ToyDetailsModal></ToyDetailsModal>
+      element:<Privateroute><ToyDetailsModal></ToyDetailsModal></Privateroute>
     },
     {
       path:"/addtoy",
-      element:<AddToy></AddToy>
+      element:<Privateroute><AddToy></AddToy></Privateroute>
     },
     {
       path:"/alltoy",
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
     },
     {
       path:"/detailspage",
-      element:<Detailspage></Detailspage>
+      element:<Privateroute><Detailspage></Detailspage></Privateroute>
     }
   ]);
   export default router;

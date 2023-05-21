@@ -3,8 +3,10 @@ import { useLoaderData } from 'react-router-dom';
 import Header from '../Shared/Header/Header';
 import Footer from '../Shared/Footer/Footer';
 import Swal from 'sweetalert2';
+import useTitle from '../hooks/useTitle';
 
 const UpdateToy = () => {
+    useTitle('update');
     const toy = useLoaderData();
     const {_id,photo,toyname,sellername,email,category,price,rating,quantity,details} = toy;
     const handleUpdateToy = event =>{

@@ -10,8 +10,10 @@ import ToyDetailsModal from "../ToyDetailsModal/ToyDetailsModal";
 import { Link } from "react-router-dom";
 
 import { useNavigate } from "react-router-dom";
+import useTitle from "../../../hooks/useTitle";
 
 const Home = () => {
+  useTitle('Home');
   const navigate = useNavigate();
   const [Data, setData] = useState([]);
   const [activeTabIndex, setActiveTabIndex] = useState(0);

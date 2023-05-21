@@ -1,25 +1,49 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Header from '../Shared/Header/Header';
 import Footer from '../Shared/Footer/Footer';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../providers/Authproviders';
+import { getAuth, updateProfile } from 'firebase/auth';
+import useTitle from '../hooks/useTitle';
 const Registration = () => {
-    const {user,createUser} = useContext(AuthContext);
+    const {user,createUser,updateUserData} = useContext(AuthContext);
+    useTitle('Register');
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
     console.log(user,createUser);
     const handleRegister = event =>{
         event.preventDefault();
+        setError('');
         const form = event.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email,password);
+        if (password.length < 6) {
+            setError('Please add at least 6 characters in your password')
+            return;
+        }
         createUser(email,password)
         .then(result => {
-            const loggedUser = result.user;
-            console.log(loggedUser);
-            form.reset();
+            const createdUser = result.user;
+                const auth = getAuth();
+                    updateProfile(auth.currentUser, {
+                    displayName: name, photoURL: photo
+                    }).then(() => {
+                    console.log("user updated successfully")
+                    // ...
+                    }).catch((error) => {
+                    // An error occurred
+                    // ...
+                    });
+                console.log(createdUser);
+                setError('');
+                event.target.reset();
         })
         .catch(error => {
             console.log(error);
+            setError(error.message);
         })
     }
     return (
@@ -40,6 +64,12 @@ const Registration = () => {
                         </div>
                         <div className="form-control">
                         <label className="label">
+                            <span className="label-text">Photo</span>
+                        </label>
+                        <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered" required/>
+                        </div>
+                        <div className="form-control">
+                        <label className="label">
                             <span className="label-text">Email</span>
                         </label>
                         <input type="email" name="email" placeholder="email" className="input input-bordered" required/>
@@ -52,6 +82,9 @@ const Registration = () => {
                         <label className="label">
                             <Link to="/login" className="label-text-alt link link-hover">Already have an account?</Link>
                         </label>
+                        </div>
+                        <div>
+                            {error}
                         </div>
                         <div className="form-control mt-6">
                         <button className="btn btn-primary">Register</button>

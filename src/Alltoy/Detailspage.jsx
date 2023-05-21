@@ -2,9 +2,11 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import Header from '../Shared/Header/Header';
 import Footer from '../Shared/Footer/Footer';
+import useTitle from '../hooks/useTitle';
 
 const Detailspage = () => {
     const location = useLocation();
+    useTitle('Detailspage');
   const toy = location.state?.data?.toy ?? {};
   const {_id,photo,toyname,sellername,email,category,price,rating,quantity,details} = toy;
     return (

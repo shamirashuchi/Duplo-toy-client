@@ -3,8 +3,10 @@ import Header from '../Shared/Header/Header';
 import Footer from '../Shared/Footer/Footer';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../providers/Authproviders';
+import useTitle from '../hooks/useTitle';
 const Login = () => {
     const {signIn,SignInWithGoogle} = useContext(AuthContext);
+    useTitle('Login');
     const handleLogin = event =>{
         event.preventDefault();
         const form = event.target;

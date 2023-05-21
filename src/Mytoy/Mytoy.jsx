@@ -3,8 +3,10 @@ import Header from "../Shared/Header/Header";
 import Footer from "../Shared/Footer/Footer";
 import { AuthContext } from "../providers/Authproviders";
 import Mytowrow from "./Mytowrow";
+import useTitle from "../hooks/useTitle";
 
 const Mytoy = () => {
+  useTitle('Mytoy');
   const { user } = useContext(AuthContext);
   const [Data, setData] = useState([]);
   const [sort, setSort] = useState(true);
@@ -54,7 +56,7 @@ const Mytoy = () => {
       <h2 className="text-5xl">Your Toys:{Data.length}</h2>
       <br />
       <div>
-        <button style={{ color: "red" }} onClick={sortHandler}>
+        <button className="btn btn-secondary" onClick={sortHandler}>
           {!sort ? "Ascending" : "Descending"}
         </button>
       </div>

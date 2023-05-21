@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/Authproviders';
 import logo  from '../../../public/duplo-lego.svg'
 const Header = () => {
-    const {user, logout} = useContext(AuthContext);
+    const {user, logout,updateUserData} = useContext(AuthContext);
     console.log(user);
     const handlelogout = () =>{
         logout()
@@ -25,7 +25,9 @@ const Header = () => {
                         <Link to="/blog">Blog</Link>
                     </li>
                     <li>
-                    <Link to="/addtoy">Add a toy</Link>
+                    {
+                        user && <Link to="/addtoy">Add a toy</Link>
+                    }
                     </li>
                     <li>
                     <Link to="/alltoy">All toy</Link>
@@ -39,11 +41,13 @@ const Header = () => {
                             {
                             user ? 
                             <>
-                            <span>{user.email}</span>
-                            <button onClick = {handlelogout} className="btn btn-xs">Sign out</button>
+                            <img style={{height:"20px",width:"20px"}}src={user.photoURL} alt="" />
                             </>
                             : <Link to="/login">Login</Link>
                             }
+                    </li>
+                    <li>
+                    <button onClick = {handlelogout} className="btn btn-secondary">Sign out</button>
                     </li>
                     <li>
                     <Link to="/registration">Registration</Link>
@@ -63,7 +67,9 @@ const Header = () => {
                     <Link to="/blog">Blog</Link>
                 </li>
                 <li>
-                    <Link to="/addtoy">Add a toy</Link>
+                    {
+                        user && <Link to="/addtoy">Add a toy</Link>
+                    }
                 </li>
                 <li>
                     <Link to="/alltoy">All toy</Link>
@@ -74,12 +80,14 @@ const Header = () => {
                         }
                     </li>
                     <li>
+                    <button onClick = {handlelogout} className="btn btn-secondary">Sign out</button>
+                    </li>
+                    <li>
                     <li>
                             {
                             user ? 
                             <>
-                            <span>{user.email}</span>
-                            <button onClick = {handlelogout} className="btn btn-secondary">Sign out</button>
+                            <img style={{height:"20px",width:"20px"}}src={user.photoURL} alt="" />
                             </>
                             : <Link to="/login">Login</Link>
                             }

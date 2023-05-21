@@ -3,8 +3,10 @@ import Header from '../Shared/Header/Header';
 import Footer from '../Shared/Footer/Footer';
 import { useLoaderData } from 'react-router-dom';
 import Singletoy from '../Singletoy/Singletoy';
+import useTitle from '../hooks/useTitle';
 
 const Alltoy = () => {
+    useTitle('Alltoy');
     const toys = useLoaderData();
     return (
         <div>

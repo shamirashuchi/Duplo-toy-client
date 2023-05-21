@@ -2,11 +2,12 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import Header from "../../../Shared/Header/Header";
 import Footer from "../../../Shared/Footer/Footer";
+import useTitle from "../../../hooks/useTitle";
 
 const ToyDetailsModal = () => {
   const location = useLocation();
   const toy = location.state?.data?.toy ?? {};
-  
+  useTitle('Toydetails');
   return (
     <div>
       <Header></Header>

@@ -3,9 +3,11 @@ import Header from '../Shared/Header/Header';
 import Footer from '../Shared/Footer/Footer';
 import { AuthContext } from '../providers/Authproviders';
 import Swal from 'sweetalert2'
+import useTitle from '../hooks/useTitle';
 
 const AddToy = () => {
     const {user} = useContext(AuthContext);
+    useTitle('Add toy');
     const handleAddToy = event =>{
         event.preventDefault();
         const form = event.target;

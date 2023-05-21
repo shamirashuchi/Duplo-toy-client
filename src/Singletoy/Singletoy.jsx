@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import useTitle from '../hooks/useTitle';
 
 const Singletoy = ({toy}) => {
+  useTitle('details');
   const navigate = useNavigate();
   const handleViewDetails = (toy) => {
     const data = { toy };
