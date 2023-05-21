@@ -17,6 +17,7 @@ const Blog = () => {
             <p>Refresh token that is used to obtain additional access tokens. This allows you to have short-lived access tokens without having to collect credentials every time one expires.</p>
             <p>We can store the access token and refresh token in the server-side session.</p>
             <h2  className='text-2xl'>Compare SQL and NoSQL databases?</h2>
+            <p>SQL databases are vertically scalable, while NoSQL databases are horizontally scalable. SQL databases are table-based, while NoSQL databases are document, key-value, graph, or wide-column stores. SQL databases are better for multi-row transactions, while NoSQL is better for unstructured data like documents or JSON.</p>
             <Footer></Footer>
         </div>
     );
