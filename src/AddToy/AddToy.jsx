@@ -23,7 +23,7 @@ const AddToy = () => {
         const toy = {photo,toyname,sellername,email,category,price,rating,quantity,details};
         console.log(toy);
 
-        fetch('http://localhost:2000/toy',{
+        fetch('https://toy-server-side-rho.vercel.app/toy',{
             method: 'POST',
             headers:{
                 'content-type':'application/json'

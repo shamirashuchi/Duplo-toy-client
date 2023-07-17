@@ -12,9 +12,10 @@ const Mytoy = () => {
   const [sort, setSort] = useState(true);
   const userMail = "mama@mami.com";
   useEffect(() => {
+    //https://toyworld-bf906.web.app
     const fetchData = async () => {
       try {
-        const url = `http://localhost:2000/toyByEmail?email=${user?.email}&sort=${
+        const url = `https://toy-server-side-rho.vercel.app/toyByEmail?email=${user?.email}&sort=${
           sort ? "asc" : "desc"
         }`;
         const response = await fetch(url);
@@ -35,7 +36,7 @@ const Mytoy = () => {
   const handleDelete = (id) => {
     const proceed = confirm("Are you sure you want to delete");
     if (proceed) {
-      fetch(`http://localhost:2000/toy/${id}`, {
+      fetch(`https://toy-server-side-rho.vercel.app/toy/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

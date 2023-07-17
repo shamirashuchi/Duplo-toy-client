@@ -41,7 +41,7 @@ const router = createBrowserRouter([
     {
       path:"/alltoy",
       element:<Alltoy></Alltoy>,
-      loader: () => fetch('http://localhost:2000/toy')
+      loader: () => fetch('https://toy-server-side-rho.vercel.app/toy')
     },
     {
       path:"/mytoy",
@@ -58,7 +58,7 @@ const router = createBrowserRouter([
     {
       path:"/update/:id",
       element:<UpdateToy></UpdateToy>,
-      loader: ({params}) => fetch(`http://localhost:2000/toy/${params.id}`)
+      loader: ({params}) => fetch(`https://toy-server-side-rho.vercel.app/toy/${params.id}`)
     },
     {
       path:"/detailspage",
