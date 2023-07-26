@@ -12,17 +12,17 @@ const Detailspage = () => {
     return (
         <div>
             <Header></Header>
-            <div className="card w-full bg-base-100 shadow-xl">
+            <div className="card w-full bg-pink-100 shadow-xl">
                 <figure><img src={photo} alt="Shoes" /></figure>
                 <div className="card-body">
-                    <h2 className="card-title">{toyname}</h2>
-                    <p>{sellername}</p>
-                    <p>{email}</p>
-                    <p>{category}</p>
-                    <p>{price}</p>
-                    <p>{rating}</p>
-                    <p>{quantity}</p>
-                    <p>{details}</p>
+                    <h2 className="md:ml-96"><span className='text-pink-400 me-2'>Toy Name:</span>{toyname}</h2>
+                    <p className="md:ml-96"><span className='text-pink-400 me-2'>Sellername:</span>{sellername}</p>
+                    <p className="md:ml-96"><span className='text-pink-400 me-2'>Email:</span>{email}</p>
+                    <p className="md:ml-96"><span className='text-pink-400 me-2'>Category:</span>{category}</p>
+                    <p className="md:ml-96"><span className='text-pink-400 me-2'>Price:</span>{price}</p>
+                    <p className="md:ml-96"><span className='text-pink-400 me-2'>Rating:</span>{rating}</p>
+                    <p className="md:ml-96"><span className='text-pink-400 me-2'>Quantity:</span>{quantity}</p>
+                    <p className="md:ml-96"><span className='text-pink-400 me-2'>Details:</span>{details}</p>
                 </div>
             </div>
             <Footer></Footer>

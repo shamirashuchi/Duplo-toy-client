@@ -31,7 +31,9 @@ const Cars = () => {
             <img src="pink-background-and-different-car-toy----image.png" alt="Burger" className='ml-5 h-40 w-40' />
         </div>
      </div>
-     <button className="btn bg-pink-400 text-white rounded-full mt-10 ml-10 md:ml-96 text-2xl font-semibold">Shop       <span className=' ml-5 md:ml-20'>Car  </span>       <span className=' ml-5 md:ml-20'>Toys  </span></button>
+     <div className='flex justify-center mb-20'>
+     <button className="btn bg-pink-400 text-white rounded-full mt-10 ml-10 text-2xl font-semibold">Shop       <span className=' ml-5 md:ml-20'>Car  </span>       <span className=' ml-5 md:ml-20'>Toys  </span></button>
+     </div>
     </div>
     );
 };

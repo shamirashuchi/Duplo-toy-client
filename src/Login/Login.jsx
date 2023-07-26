@@ -37,7 +37,7 @@ const Login = () => {
     return (
         <div>
             <Header></Header>
-                    <div className="hero min-h-screen bg-base-200">
+                    <div className="hero min-h-screen bg-pink-100 text-pink-400">
                     <div className="hero-content flex-col lg:flex-row-reverse">
                         <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold">Please Login!</h1>
@@ -46,28 +46,28 @@ const Login = () => {
                                 <form onSubmit={handleLogin}  className="card-body">
                                     <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text">Email</span>
+                                        <span className="label-text text-pink-400">Email</span>
                                     </label>
                                     <input type="email" name="email" placeholder="email" className="input input-bordered" required/>
                                     </div>
                                     <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text">Password</span>
+                                        <span className="label-text text-pink-400">Password</span>
                                     </label>
                                     <input type="password" name="password" placeholder="password" className="input input-bordered" required/>
                                     <label className="label">
-                                        <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                        <a href="#" className="label-text-alt link link-hover text-pink-400">Forgot password?</a>
                                     </label>
                                     </div>
                                     <div className="form-control mt-6">
-                                    <button className="btn btn-primary">Login</button>
+                                    <button className="btn bg-pink-400 text-white">Login</button>
                                     </div>
                                 </form>
                                 <p className='mb-4 ml-8'>
-                                <Link to='/registration'className="label-text-alt link link-hover">New to AuthMaster? Please Register</Link>
+                                <Link to='/registration'className="label-text-alt link link-hover text-pink-400">New to Duplotoy? Please Register</Link>
                                 </p>
-                                <div>
-                                <button onClick={handleGoogleSignIn} className="btn btn-primary">Google</button>
+                                <div className=' flex justify-center mb-10'>
+                                <button onClick={handleGoogleSignIn} className="btn bg-pink-400 text-white">Log In with Google</button>
                                 </div>
                         </div>
                     </div>

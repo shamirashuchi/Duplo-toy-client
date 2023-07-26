@@ -58,7 +58,9 @@ const Gallery = () => {
                 </div>
             </div>
 </div>
-<button className="btn bg-pink-400 text-white rounded-full mt-2 ml-10 md:ml-96 text-2xl font-semibold">Shop       <span className=' ml-5 md:ml-20'>Barbie  </span>       <span className=' ml-5 md:ml-20'>Dolls  </span></button>
+<div className='flex justify-center'>
+<button className="btn bg-pink-400 text-white rounded-full mt-2 ml-10  text-2xl font-semibold">Shop       <span className=' ml-5 md:ml-20'>Barbie  </span>       <span className=' ml-5 md:ml-20'>Dolls  </span></button>
+</div>
        </div>
     );
 };

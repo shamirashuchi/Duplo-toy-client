@@ -44,21 +44,21 @@ const AddToy = () => {
         })
     }
     return (
-        <div>
+        <div className='bg-pink-100'>
             <Header></Header>
-            <h1 className='text-center text-7xl'>Add A Toy</h1>
-            <div className='ms-96'>
+            <h1 className='text-center text-7xl text-pink-400 mt-12 mb-4'>Add A Toy</h1>
+            <div className='flex justify-center'>
                 <form onSubmit={handleAddToy}>
                     <div className='flex'>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text">Picture URL</span>
+                                <span className="label-text text-pink-400">Picture URL</span>
                             </label>
                             <input type="text" name="photo"  placeholder="Picture URL" className="input input-bordered w-full max-w-xs" />
                         </div>
                         <div className="form-control w-full max-w-xs ms-12">
                             <label className="label">
-                                <span className="label-text">Toy name</span>
+                                <span className="label-text  text-pink-400">Toy name</span>
                             </label>
                             <input type="text" name="toyname"  placeholder="Toy name" className="input input-bordered w-full max-w-xs" />
                         </div>
@@ -66,28 +66,33 @@ const AddToy = () => {
                     <div className='flex mt-6'>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text">Seller name</span>
+                                <span className="label-text  text-pink-400">Seller name</span>
                             </label>
                             <input type="text" name="sellername" defaultValue={user.displayName && user.displayName}  placeholder="Seller name" className="input input-bordered w-full max-w-xs" />
                         </div>
                         <div className="form-control w-full max-w-xs ms-12">
                             <label className="label">
-                                <span className="label-text">Seller email</span>
+                                <span className="label-text  text-pink-400">Seller email</span>
                             </label>
                             <input type="email" name="email" defaultValue={user.email}  placeholder="Seller email" className="input input-bordered w-full max-w-xs" />
                         </div>
                     </div>
                     {/* category and price field */}
                     <div className='flex'>
-                        <select className="select select-bordered w-full max-w-xs mt-12" name="category">
+                    <div>
+                    <label className="label">
+                                <span className="label-text  text-pink-400 mt-3">Category</span>
+                            </label>
+                        <select className="select select-bordered w-52 max-w-xs" name="category">
                         <option disabled selected>Sub Category</option>
                         <option>Math Toys</option>
                         <option>Language Toys</option>
                         <option>Engineering Toys</option>
                         </select>
+                    </div>
                         <div className="form-control w-full max-w-xs ms-12 mt-3">
                             <label className="label">
-                                <span className="label-text">Price</span>
+                                <span className="label-text  text-pink-400">Price</span>
                             </label>
                             <input type="text" name="price"  placeholder="Price" className="input input-bordered w-full max-w-xs" />
                         </div>
@@ -96,21 +101,26 @@ const AddToy = () => {
                     <div className='flex mt-6'>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text">Rating</span>
+                                <span className="label-text  text-pink-400">Rating</span>
                             </label>
                             <input type="text" name="rating"  placeholder="Rating" className="input input-bordered w-full max-w-xs" />
                         </div>
                         <div className="form-control w-full max-w-xs ms-12">
                             <label className="label">
-                                <span className="label-text">Quantity</span>
+                                <span className="label-text  text-pink-400">Quantity</span>
                             </label>
                             <input type="text" name="quantity"  placeholder="quantity" className="input input-bordered w-full max-w-xs" />
                         </div>
                     </div>
                     <div>
-                    <textarea className="textarea textarea-bordered mt-6 mb-6" name="details" placeholder="Detail description"></textarea>
+                    <label className="label">
+                                <span className="label-text  text-pink-400 mt-3">Details</span>
+                            </label>
+                    <textarea className="textarea textarea-bordered  mb-6 w-full" name="details" placeholder="Detail description"></textarea>
                     </div>
-                    <input type="submit" value="Add Toy" className="btn ms-80 mb-12"/>
+                    <div className='flex justify-center'>
+                    <input type="submit" value="Add Toy" className="btn mb-12 bg-pink-400 hover:bg-pink-600"/>
+                    </div>
                 </form>
             </div>
              <Footer></Footer>

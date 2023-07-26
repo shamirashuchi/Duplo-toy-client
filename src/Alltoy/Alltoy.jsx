@@ -9,19 +9,19 @@ const Alltoy = () => {
     useTitle('Alltoy');
     const toys = useLoaderData();
     return (
-        <div>
+        <div className='bg-pink-200'>
             <Header></Header>
-            <h2>This is all toy page:{toys.length}</h2>
-            <div className="overflow-x-auto w-full">
-                <table className="table w-full">
-                    <thead>
+            <h2 className='flex justify-center text-pink-400 text-3xl font-semibold my-10'>All TOYS</h2>
+            <div className="overflow-x-auto w-full flex justify-center mb-10">
+                <table className="table w-1/2">
+                    <thead className='text-white'>
                     <tr>
-                        <th>Seller</th>
-                        <th>Toy Name</th>
-                        <th>Sub-category</th>
-                        <th>Price</th>
-                        <th>Available Quantity</th>
-                        <th></th>
+                        <th className='bg-purple-600'>Seller</th>
+                        <th className='bg-purple-600'>Toy Name</th>
+                        <th className='bg-purple-600'>Sub-category</th>
+                        <th className='bg-purple-600'>Price</th>
+                        <th className='bg-purple-600'>Available Quantity</th>
+                        <th className='bg-purple-600'></th>
                     </tr>
                     </thead>
                     <tbody>

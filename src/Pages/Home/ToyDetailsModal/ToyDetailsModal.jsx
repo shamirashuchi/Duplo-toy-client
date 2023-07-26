@@ -9,20 +9,20 @@ const ToyDetailsModal = () => {
   const toy = location.state?.data?.toy ?? {};
   useTitle('Toydetails');
   return (
-    <div>
+    <>
       <Header></Header>
-      <div className="card card-side bg-base-100 shadow-xl">
-      <figure>
-        <img src={toy.imageUrl} alt="Movie" />
+      <div className="bg-pink-100">
+      <figure className="flex justify-center">
+        <img  src={toy.imageUrl} alt="Movie" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">{toy.name}</h2>
-        <p className="mb-2">Price: ${toy.price}</p>
-        <p className="mt-2">Rating: {toy.rating}</p>
+        <h2 className="ms-96"><span className="text-pink-400 me-2">Toy Name:</span>{toy.name}</h2>
+        <h2  className="ms-96"><span className="text-pink-400 me-2">Price:</span> ${toy.price}</h2>
+        <h2 className="ms-96"><span className="text-pink-400 me-2">Rating:</span> {toy.rating}</h2>
       </div>
-    </div>
+      </div>
     <Footer></Footer>
-    </div>
+    </>
   );
 };
 

@@ -18,14 +18,14 @@ const Singletoy = ({toy}) => {
             </div>
           </div>
         </td>
-        <td>
+        <td className="font-bold">
           {toy.toyname}
         </td>
-        <td>{toy.category}</td>
-        <td>{toy.price}</td>
-        <td>{toy.quantity}</td>
+        <td className="font-bold">{toy.category}</td>
+        <td className="font-bold">{toy.price}</td>
+        <td className="font-bold">{toy.quantity}</td>
         <th>
-          <button onClick={() => handleViewDetails(toy)} className="btn btn-ghost btn-xs">details</button>
+          <button onClick={() => handleViewDetails(toy)} className="btn bg-pink-300 hover:bg-pink-400 btn-xs">details</button>
         </th>
       </tr>
     );

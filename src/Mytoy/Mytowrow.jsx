@@ -29,10 +29,10 @@ const Mytowrow = ({toy,handleDelete,handleToyConfirm}) => {
                 <td>{quantity}</td>
                 <td>{details}</td>
                 <th>
-                <button onClick={() => handleDelete(_id)} className="btn btn-ghost btn-xs">Delete</button>
+                <button onClick={() => handleDelete(_id)} className="btn bg-red-600 hover:bg-red-800 btn-xs">Delete</button>
                 </th>
                 <th>
-                <Link to={`/update/${_id}`}><button className="btn btn-ghost btn-xs">Update</button></Link>
+                <Link to={`/update/${_id}`}><button className="btn bg-yellow-400 hover:bg-yellow-600 btn-xs">Update</button></Link>
                 </th>
             </tr>
     );

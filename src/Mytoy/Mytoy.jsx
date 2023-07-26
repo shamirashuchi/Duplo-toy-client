@@ -52,32 +52,25 @@ const Mytoy = () => {
   };
 
   return (
-    <div>
+    <div className="bg-pink-100">
       <Header></Header>
-      <h2 className="text-5xl">Your Toys:{Data.length}</h2>
-      <br />
-      <div>
-        <button className="btn btn-secondary" onClick={sortHandler}>
-          {!sort ? "Ascending" : "Descending"}
-        </button>
-      </div>
-      <br />
+      <h2 className="text-5xl flex justify-center text-pink-400 my-10">Your Toys</h2>
       <div className="overflow-x-auto w-full">
-        <table className="table w-full">
+        <table className="table w-1/2">
           {/* head */}
           <thead>
             <tr>
-              <th>Photo</th>
-              <th>Toyname</th>
-              <th>Sellername</th>
-              <th>Email</th>
-              <th>Category</th>
-              <th>Price</th>
-              <th>Rating</th>
-              <th>Quantity</th>
-              <th>Details</th>
-              <th>Delete</th>
-              <th>Update</th>
+              <th className="bg-purple-600">Photo</th>
+              <th className="bg-purple-600">Toyname</th>
+              <th className="bg-purple-600">Sellername</th>
+              <th className="bg-purple-600">Email</th>
+              <th className="bg-purple-600">Category</th>
+              <th className="bg-purple-600">Price</th>
+              <th className="bg-purple-600">Rating</th>
+              <th className="bg-purple-600">Quantity</th>
+              <th className="bg-purple-600">Details</th>
+              <th className="bg-purple-600">Delete</th>
+              <th className="bg-purple-600">Update</th>
             </tr>
           </thead>
           <tbody>
@@ -91,6 +84,13 @@ const Mytoy = () => {
           </tbody>
         </table>
       </div>
+      <br />
+      <div className="flex justify-center">
+        <button className="btn btn-secondary" onClick={sortHandler}>
+          {!sort ? "Ascending" : "Descending"}
+        </button>
+      </div>
+      <br />
       <Footer></Footer>
     </div>
   );
